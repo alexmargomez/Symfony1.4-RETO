@@ -100,12 +100,6 @@ Puedes ver el sistema funcionando en el siguiente enlace: [https://pruebatecnica
          type: many
    ```
 
-4. **Generar el modelo**: Una vez definido el esquema, ejecuta el siguiente comando para construir el modelo:
-
-   ```bash
-   php symfony doctrine:build --all --no-confirmation
-   ```
-
 ### Configuración de la Base de Datos
 
 1. **Crear la base de datos (DB)**: Crea la base de datos, usuario y contraseña en MariaDB.
