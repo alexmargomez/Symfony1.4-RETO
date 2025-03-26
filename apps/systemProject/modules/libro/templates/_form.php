@@ -22,11 +22,6 @@
       <?php echo $form['autor']->renderError() ?>
     </div>
 
-    <div class="mb-3">
-      <?php echo $form['prestado']->renderLabel(null, array('class' => 'form-label')) ?>
-      <?php echo $form['prestado']->render(array('class' => 'form-control')) ?>
-      <?php echo $form['prestado']->renderError() ?>
-    </div>
   </div>
 
   <div class="form-group">
