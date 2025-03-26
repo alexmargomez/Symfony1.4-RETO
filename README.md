@@ -1,7 +1,6 @@
 # Symfony 1.4 PRUEBA TECNICA - DOCUMENTATION
 
-Puedes ver el sistema funcionando en el siguiente enlace: 
-https://pruebatecnica.alexmargomez.software
+Puedes ver el sistema funcionando en el siguiente enlace: [https://pruebatecnica.alexmargomez.softtware](https://pruebatecnica.alexmargomez.softtware).
 
 ## Requisitos previos
 
@@ -18,6 +17,7 @@ https://pruebatecnica.alexmargomez.software
 
    ```bash
    sudo apt install php5.6 php5.6-cli php5.6-mysql php5.6-xml php5.6-fpm
+   sudo apt-get install php-pear # Necesario para Doctrine
    ```
 
 3. **Configurar PHP 5.6 como la versión predeterminada**:
@@ -44,7 +44,7 @@ https://pruebatecnica.alexmargomez.software
    php symfony generate:app systemProject
    ```
 
-3. **Configurar el servidor web**: En mi caso, configure Nginx para que apunte a la carpeta `web` del proyecto.
+3. **Configurar el servidor web**: En tu caso, configura Nginx para que apunte a la carpeta `web` del proyecto.
 
 ## Configuración del Proyecto
 
@@ -148,7 +148,7 @@ En Symfony 1.4, las acciones del controlador se definen en los archivos de contr
    - **executeNew**: Método para mostrar el formulario de creación de préstamo.
    - **executeCreate**: Método para procesar el formulario y crear un nuevo préstamo.
 
-   ```php
+   ```bash
    class prestamoActions extends sfActions
    {
        public function executeIndex(sfWebRequest $request)
@@ -184,7 +184,7 @@ En Symfony 1.4, las acciones del controlador se definen en los archivos de contr
 
 4. **Configurar las rutas**: Las rutas para estas acciones deben estar definidas en el archivo `routing.yml` del módulo. Aquí hay un ejemplo de cómo hacerlo:
 
-   ```yaml
+   ```bash
    prestamo:
      url: /prestamo
      param: { module: prestamo, action: index }
@@ -214,10 +214,17 @@ En Symfony 1.4, las acciones del controlador se definen en los archivos de contr
 
 1. **Configurar las clases GET**: Configura las clases GET en los modelos para que muestren nombres en lugar de IDs en los formularios y vistas.
 
-### Configuración del Formulario de Préstamo
+### Configuración del Préstamo
 
-1. **Configurar `PrestamoForm`**: Configura `PrestamoForm` para mostrar el nombre del estudiante y el título del libro en los selectores desplegables, mejorando la usabilidad del formulario de préstamos.
+Cada vez que se crea un préstamo, es necesario cambiar el estado del libro para indicar que no está disponible hasta que sea devuelto. Esto se puede lograr mediante la configuración del modelo y los métodos adecuados.
 
+#### Modelo de Préstamo:
+
+En el modelo de préstamo, puedes definir un método que actualice el estado del libro cuando se crea un nuevo préstamo.
+
+#### Formulario de Préstamo:
+
+Configura el formulario para manejar las fechas automáticas y los IDs de los modelos relacionados (estudiantes y libros) para mostrar sus nombres y títulos.
 ## Cómo Funciona el Sistema
 
 El sistema de gestión bibliotecaria permite gestionar libros, estudiantes y préstamos. Los módulos principales son:
