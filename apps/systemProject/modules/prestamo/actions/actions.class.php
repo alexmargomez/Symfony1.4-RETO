@@ -14,6 +14,9 @@ class prestamoActions extends sfActions
   {
     $this->prestamos = Doctrine_Core::getTable('Prestamo')
       ->createQuery('a')
+      ->leftJoin('a.Libro l')
+      ->leftJoin('a.Estudiante e')
+      ->where('a.devuelto = ?', 0)
       ->execute();
   }
 
@@ -50,6 +53,18 @@ class prestamoActions extends sfActions
     $this->setTemplate('edit');
   }
 
+  public function executeEntregar(sfWebRequest $request)
+  {
+      $this->forward404Unless($prestamo = Doctrine_Core::getTable('Prestamo')->find(array($request->getParameter('id'))), sprintf('Object prestamo does not exist (%s).', $request->getParameter('id')));
+      $prestamo->setDevuelto(1);
+      $prestamo->save();
+
+      $libro = $prestamo->getLibro();
+      $libro->setPrestado(0);
+      $libro->save();
+      $this->redirect('prestamo/index');
+  }
+  
   public function executeDelete(sfWebRequest $request)
   {
     $request->checkCSRFProtection();
@@ -65,9 +80,20 @@ class prestamoActions extends sfActions
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
     if ($form->isValid())
     {
-      $prestamo = $form->save();
+        // Set the fecha_prestamo to the current date before saving
+        $prestamo = $form->getObject();
+        if ($prestamo->isNew()) {
+            $prestamo->setFechaPrestamo(date('Y-m-d'));
+        }
 
-      $this->redirect('estudiante/index');
+        $prestamo = $form->save();
+
+        // Update the book's status to 'prestado'
+        $libro = $prestamo->getLibro();
+        $libro->setPrestado(1);
+        $libro->save();
+
+        $this->redirect('prestamo/index');
     }
   }
 }

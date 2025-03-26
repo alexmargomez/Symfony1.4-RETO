@@ -12,4 +12,9 @@
  */
 class Libro extends BaseLibro
 {
+    public function getNombre()
+    {
+    return $this->titulo;
+    }
 }
+

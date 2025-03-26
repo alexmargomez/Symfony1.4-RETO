@@ -67,7 +67,7 @@ class libroActions extends sfActions
     {
       $libro = $form->save();
 
-      $this->redirect('estudiante/index');
+      $this->redirect('libro/index');
     }
   }
 }

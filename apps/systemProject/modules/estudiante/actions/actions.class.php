@@ -21,6 +21,7 @@ class estudianteActions extends sfActions
     $this->form = new EstudianteForm();
 
     $this->processForm($request, $this->form);
+    
 
     $this->setTemplate('new');
   }

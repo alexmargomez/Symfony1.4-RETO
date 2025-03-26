@@ -12,4 +12,15 @@
  */
 class Prestamo extends BasePrestamo
 {
+  public function save(Doctrine_Connection $conn = null)
+  {
+    // Update the book's status to 'prestado'
+    $libro = $this->getLibro();
+    $libro->setPrestado(1);
+    $libro->save();
+
+ // Call the parent save method
+    return parent::save($conn);
+  }
+
 }

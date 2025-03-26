@@ -12,4 +12,8 @@
  */
 class Estudiante extends BaseEstudiante
 {
+    public function getNombreCompleto()
+    {
+    return $this->nombre . ' ' . $this->apellidos;
+    }
 }

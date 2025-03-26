@@ -3,33 +3,35 @@
 
 prod:
   .settings:
-    no_script_name:         true
-    logging_enabled:        false
+    no_script_name: true
+    logging_enabled: false
 
 dev:
   .settings:
-    error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
-    web_debug:              true
-    cache:                  false
-    no_script_name:         false
-    etag:                   false
+    error_reporting: <?php echo (E_ALL | E_STRICT)."\n" ?>
+    web_debug: true
+    cache: false
+    no_script_name: false
+    etag: false
 
 test:
   .settings:
-    error_reporting:        <?php echo ((E_ALL | E_STRICT) ^ E_NOTICE)."\n" ?>
-    cache:                  false
-    web_debug:              false
-    no_script_name:         false
-    etag:                   false
+    error_reporting: <?php echo ((E_ALL | E_STRICT) ^ E_NOTICE)."\n" ?>
+    cache: false
+    web_debug: false
+    no_script_name: false
+    etag: false
 
 all:
   .settings:
     # Form security secret (CSRF protection)
-    csrf_secret:            09fcfafbf8039192909b12b3ba752fd4139ed144
+    csrf_secret: 09fcfafbf8039192909b12b3ba752fd4139ed144
 
     # Output escaping settings
-    escaping_strategy:      true
-    escaping_method:        ESC_SPECIALCHARS
+    escaping_strategy: true
+    escaping_method: ESC_SPECIALCHARS
 
     # Enable the database manager
-    use_database:           true
+    use_database: true
+
+    sf_template_engine: twig

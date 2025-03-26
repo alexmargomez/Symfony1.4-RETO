@@ -4,16 +4,29 @@
 # default rules
 homepage:
   url: /
-  param: { module: default, action: index }
+  param: { module: prestamo, action: index }
 
-# generic rules
-# please, remove them by adding more specific rules
 default_index:
   url: /:module
   param: { action: index }
 
 default:
   url: /:module/:action/*
+
+# default rules
+
+prestamolibro:
+  url: /prestamo
+  param: { module: prestamo, action: index }
+
+prestamolibro_new:
+  url: /prestamo/new
+  param: { module: prestamo, action: new }
+
+prestamolibro_edit:
+  url: /prestamo/:id/edit
+  param: { module: prestamo, action: edit }
+  requirements: { id: \d+ }
 
 estudiante:
   url: /estudiante
@@ -39,17 +52,4 @@ libro_new:
 libro_edit:
   url: /libro/:id/edit
   param: { module: libro, action: edit }
-  requirements: { id: \d+ }
-
-prestamolibro:
-  url: /prestamolibro
-  param: { module: prestamolibro, action: index }
-
-prestamolibro_new:
-  url: /prestamolibro/new
-  param: { module: prestamolibro, action: new }
-
-prestamolibro_edit:
-  url: /prestamolibro/:id/edit
-  param: { module: prestamolibro, action: edit }
   requirements: { id: \d+ }
