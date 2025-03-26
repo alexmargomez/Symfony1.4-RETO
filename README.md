@@ -1,6 +1,6 @@
 # Symfony 1.4 PRUEBA TECNICA - DOCUMENTATION
 
-Puedes ver el sistema funcionando en el siguiente enlace: [https://pruebatecnica.alexmargomez.softtware](https://pruebatecnica.alexmargomez.softtware).
+Puedes ver el sistema funcionando en el siguiente enlace creado por el sistema ngrok: https://4767-186-190-231-179.ngrok-free.app 
 
 ## Requisitos previos
 
@@ -229,33 +229,6 @@ El sistema de gestión bibliotecaria permite gestionar libros, estudiantes y pr�
 
 Cada módulo cuenta con formularios y vistas configuradas para facilitar la administración de los datos. La interfaz está mejorada con Bootstrap para una mejor experiencia de usuario.
 
-## Instalación en Otro Equipo o Servidor
-
-1. **Clonar el Repositorio**: Clona el repositorio en el nuevo equipo o servidor.
-
-   ```bash
-   git clone https://github.com/alexmargomez/Symfony1.4-RETO.git
-   cd Symfony1.4-RETO
-   ```
-
-2. **Configurar el Entorno**: Asegúrate de tener PHP y un servidor web configurados.
-
-3. **Configurar la Base de Datos**: Crea la base de datos y actualiza `config/databases.yml` con los detalles de la base de datos.
-
-4. **Crear las Tablas y Datos Iniciales**:
-
-   ```bash
-   php symfony doctrine:build --all --no-confirmation
-   php symfony doctrine:data-load
-   ```
-
-5. **Configurar el Servidor Web**: Configura tu servidor web para apuntar al directorio `web` del proyecto.
-
-6. **Limpiar la Caché**:
-
-   ```bash
-   php symfony cc
-   ```
 
 Accede a la URL de tu proyecto en el navegador para verificar que todo funciona correctamente.
 
