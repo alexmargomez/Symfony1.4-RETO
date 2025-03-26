@@ -1,4 +1,4 @@
-# Symfony 1.4 Library Management System
+# Symfony 1.4 PRUEBA TECNICA - DOCUMENTATION
 
 ## Requisitos previos
 
