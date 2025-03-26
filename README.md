@@ -234,8 +234,8 @@ Cada módulo cuenta con formularios y vistas configuradas para facilitar la admi
 1. **Clonar el Repositorio**: Clona el repositorio en el nuevo equipo o servidor.
 
    ```bash
-   git clone https://github.com/alexmargomez/symfony-library-management.git
-   cd symfony-library-management
+   https://github.com/alexmargomez/Symfony1.4-RETO.git
+   cd Symfony1.4-RETO
    ```
 
 2. **Configurar el Entorno**: Asegúrate de tener PHP y un servidor web configurados.
