@@ -1,0 +1,73 @@
+Libro:
+  connection: doctrine
+  tableName: libros
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    titulo:
+      type: string(255)
+    autor:
+      type: string(255)
+    prestado:
+      type: boolean
+  relations:
+    Prestamos:
+      local: id
+      foreign: libro_id
+      foreignAlias: Libro
+      type: many
+      onDelete: CASCADE
+
+Estudiante:
+  connection: doctrine
+  tableName: estudiantes
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    nombre:
+      type: string(255)
+    apellidos:
+      type: string(255)
+    email:
+      type: string(255)
+  relations:
+    Prestamos:
+      local: id
+      foreign: estudiante_id
+      foreignAlias: Estudiante
+      type: many
+      onDelete: CASCADE
+
+Prestamo:
+  connection: doctrine
+  tableName: prestamos
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    libro_id:
+      type: integer(4)
+    estudiante_id:
+      type: integer(4)
+    fecha_prestamo:
+      type: date
+    fecha_devolucion:
+      type: date
+    devuelto:
+      type: boolean
+  relations:
+    Libro:
+      local: libro_id
+      foreign: id
+      foreignAlias: Prestamos
+      onDelete: CASCADE
+    Estudiante:
+      local: estudiante_id
+      foreign: id
+      foreignAlias: Prestamos
+      onDelete: CASCADE
