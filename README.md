@@ -18,7 +18,6 @@ https://pruebatecnica.alexmargomez.software
 
    ```bash
    sudo apt install php5.6 php5.6-cli php5.6-mysql php5.6-xml php5.6-fpm
-   sudo apt-get install php-pear # Necesario para Doctrine
    ```
 
 3. **Configurar PHP 5.6 como la versión predeterminada**:
@@ -45,7 +44,7 @@ https://pruebatecnica.alexmargomez.software
    php symfony generate:app systemProject
    ```
 
-3. **Configurar el servidor web**: En tu caso, configura Nginx para que apunte a la carpeta `web` del proyecto.
+3. **Configurar el servidor web**: En mi caso, configure Nginx para que apunte a la carpeta `web` del proyecto.
 
 ## Configuración del Proyecto
 
