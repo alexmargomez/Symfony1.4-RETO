@@ -234,7 +234,7 @@ Cada módulo cuenta con formularios y vistas configuradas para facilitar la admi
 1. **Clonar el Repositorio**: Clona el repositorio en el nuevo equipo o servidor.
 
    ```bash
-   https://github.com/alexmargomez/Symfony1.4-RETO.git
+   git clone https://github.com/alexmargomez/Symfony1.4-RETO.git
    cd Symfony1.4-RETO
    ```
 
