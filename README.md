@@ -229,9 +229,6 @@ El sistema de gestión bibliotecaria permite gestionar libros, estudiantes y pr�
 
 Cada módulo cuenta con formularios y vistas configuradas para facilitar la administración de los datos. La interfaz está mejorada con Bootstrap para una mejor experiencia de usuario.
 
-
-Accede a la URL de tu proyecto en el navegador para verificar que todo funciona correctamente.
-
 ---
 
-Si tienes alguna pregunta o necesitas más ayuda, no dudes en contactar.
+Si el link de ngrok caduco me pueden escirbir y genero uno nuevo, para que puedan interactuar con la prueba. 
